@@ -1,0 +1,167 @@
+<mat-card class="container">
+  <form class="createrideform" [formGroup]="createRideForm">
+    <div class="inputItem">
+      <mat-form-field appearance="outline">
+        <mat-label>Employee Id</mat-label>
+        <input
+          type="text"
+          matInput
+          placeholder="Employee Id"
+          formControlName="employeeId"
+        />
+      </mat-form-field>
+      <div
+        *ngIf="
+          createRideForm.get('employeeId').touched &&
+          createRideForm.get('employeeId').invalid
+        "
+      >
+        <mat-error *ngIf="createRideForm.get('employeeId').errors.required"
+          >Employee Id is required</mat-error
+        >
+      </div>
+    </div>
+    <div class="inputItem">
+      <mat-form-field appearance="outline">
+        <mat-label>Vehicle type</mat-label>
+        <mat-select
+          matInput
+          placeholder="Vehicle Type"
+          formControlName="vehicleType"
+        >
+          <mat-option value="">--Select--</mat-option>
+          <mat-option value="Bike"> Bike </mat-option>
+          <mat-option value="Car"> Car </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <div
+        *ngIf="
+          createRideForm.get('vehicleType').touched &&
+          createRideForm.get('vehicleType').invalid
+        "
+      >
+        <mat-error *ngIf="createRideForm.get('vehicleType').errors.required"
+          >Vehicle Type is required</mat-error
+        >
+      </div>
+    </div>
+
+    <div class="inputItem">
+      <mat-form-field appearance="outline">
+        <mat-label>Vehicle Number</mat-label>
+        <input
+          type="text"
+          matInput
+          placeholder="Vehicle Number"
+          formControlName="vehicleNo"
+        />
+      </mat-form-field>
+      <div
+        *ngIf="
+          createRideForm.get('vehicleNo').touched &&
+          createRideForm.get('vehicleNo').invalid
+        "
+      >
+        <mat-error *ngIf="createRideForm.get('vehicleNo').errors.required"
+          >Vehicle No is required</mat-error
+        >
+      </div>
+    </div>
+
+    <div class="inputItem">
+      <mat-form-field appearance="outline">
+        <mat-label>Vacant seats</mat-label>
+        <input
+          type="number"
+          matInput
+          placeholder="Vacant Seats"
+          formControlName="vacantSeats"
+        />
+      </mat-form-field>
+      <div
+        *ngIf="
+          createRideForm.get('vacantSeats').touched &&
+          createRideForm.get('vacantSeats').invalid
+        "
+      >
+        <mat-error *ngIf="createRideForm.get('vacantSeats').errors.required"
+          >Vacant seats is required</mat-error
+        >
+      </div>
+    </div>
+
+    <div class="inputItem">
+      <mat-form-field appearance="outline">
+        <mat-label>Time</mat-label>
+        <input type="time" matInput placeholder="Time" formControlName="time" />
+      </mat-form-field>
+      <div
+        *ngIf="
+          createRideForm.get('time').touched &&
+          createRideForm.get('time').invalid
+        "
+      >
+        <mat-error *ngIf="createRideForm.get('time').errors.required"
+          >Time is required</mat-error
+        >
+      </div>
+    </div>
+
+    <div class="inputItem">
+      <mat-form-field appearance="outline">
+        <mat-label>Pickup point</mat-label>
+        <input
+          type="text"
+          matInput
+          placeholder="Pickup point"
+          formControlName="pickUpPoint"
+        />
+      </mat-form-field>
+      <div
+        *ngIf="
+          createRideForm.get('pickUpPoint').touched &&
+          createRideForm.get('pickUpPoint').invalid
+        "
+      >
+        <mat-error *ngIf="createRideForm.get('pickUpPoint').errors.required"
+          >Pickup point is required</mat-error
+        >
+      </div>
+    </div>
+
+    <div class="inputItem">
+      <mat-form-field appearance="outline">
+        <mat-label>Destination</mat-label>
+        <input
+          type="text"
+          matInput
+          placeholder="Destination"
+          formControlName="destination"
+        />
+      </mat-form-field>
+      <div
+        *ngIf="
+          createRideForm.get('destination').touched &&
+          createRideForm.get('destination').invalid
+        "
+      >
+        <mat-error *ngIf="createRideForm.get('destination').errors.required"
+          >Destination is required</mat-error
+        >
+      </div>
+    </div>
+  </form>
+  <hr />
+  <mat-card-actions class="actionitems" align="center">
+    <button
+      [disabled]="createRideForm.invalid"
+      mat-raised-button
+      color="primary"
+      (click)="onCreateRide()"
+    >
+      Create
+    </button>
+    <button mat-raised-button color="accent" (click)="reset()">Reset</button>
+  </mat-card-actions>
+</mat-card>

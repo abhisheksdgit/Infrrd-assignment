@@ -1,0 +1,31 @@
+.rideheader {
+  width: 50%;
+}
+
+.expansionContent {
+  display: flex;
+  flex-direction: row;
+}
+
+.expansionContentElement {
+  flex: auto;
+}
+
+.filter {
+  text-align: -webkit-center;
+}
+
+app-filter-rides {
+  margin: 10%;
+  padding: 2%;
+  display: grid;
+  min-width: 200px;
+  max-width: 250px;
+  align-self: center;
+}
+
+@media (max-width: 750px) {
+  .expansionContent {
+    flex-direction: column;
+  }
+}

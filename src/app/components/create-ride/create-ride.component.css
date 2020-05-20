@@ -1,0 +1,51 @@
+.container {
+  margin: 2%;
+  padding: 2%;
+}
+
+.createrideform {
+  display: flex;
+  flex-direction: row;
+  flex: wrap;
+  flex-wrap: wrap;
+}
+
+.inputItem {
+  width: 21%;
+  margin: 1%;
+  padding: 1%;
+}
+
+.actionitems {
+  margin-bottom: 0px !important;
+}
+
+@media (max-width: 900px) {
+  .inputItem {
+    width: 25%;
+  }
+}
+
+@media (max-width: 800px) {
+  .inputItem {
+    width: 29%;
+  }
+}
+
+@media (max-width: 700px) {
+  .inputItem {
+    width: 35%;
+  }
+}
+
+@media (max-width: 600px) {
+  .inputItem {
+    width: 46%;
+  }
+}
+
+@media (max-width: 500px) {
+  .inputItem {
+    width: 100%;
+  }
+}

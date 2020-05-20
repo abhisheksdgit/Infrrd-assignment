@@ -1,0 +1,43 @@
+<mat-card class="filter">
+  <app-filter-rides (filterValEvent)="filterRides($event)"></app-filter-rides>
+</mat-card>
+<mat-card *ngIf="filteredRides; else noRidesMessage">
+  <mat-accordion *ngFor="let ride of filteredRides">
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <span class="rideheader"
+          ><b>Pickup point: </b> {{ ride.pickUpPoint }}
+        </span>
+        <span class="rideheader"><b>Ride time: </b>{{ ride.time }}</span>
+      </mat-expansion-panel-header>
+      <span class="expansionContent">
+        <span class="expansionContentElement"
+          ><b>Employee Id: </b> {{ ride.employeeId }}</span
+        >
+        <span class="expansionContentElement"
+          ><b>Vacant Seats: </b> {{ ride.vacantSeats }}</span
+        >
+        <span class="expansionContentElement"
+          ><b>Vehicle Type: </b> {{ ride.vehicleType }}</span
+        >
+        <span class="expansionContentElement"
+          ><b>Vehicle No: </b> {{ ride.vehicleNo }}</span
+        >
+        <span class="expansionContentElement"
+          ><b>Destination: </b> {{ ride.destination }}</span
+        >
+      </span>
+      <mat-action-row>
+        <button
+          mat-button
+          color="primary"
+          (click)="requestRide(ride.id)"
+          [disabled]="ride.vacantSeats <= 0"
+        >
+          Request
+        </button>
+      </mat-action-row>
+    </mat-expansion-panel>
+  </mat-accordion>
+</mat-card>
+<ng-template #noRidesMessage>No rides available</ng-template>

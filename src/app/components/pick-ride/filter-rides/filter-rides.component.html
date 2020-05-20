@@ -1,0 +1,18 @@
+<mat-form-field>
+  <mat-select [(ngModel)]="filterVal">
+    <mat-option value="" selected="selected">
+      --Select--
+    </mat-option>
+    <mat-option value="Both" selected="selected">
+      Both
+    </mat-option>
+    <mat-option value="Bike">
+      Bike
+    </mat-option>
+    <mat-option value="Car">
+      Car
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+
+<button mat-button color="primary" (click)="filterValue()">Filter</button>
